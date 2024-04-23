@@ -24,8 +24,6 @@ public class Grid : MonoBehaviour
 
                 GameObject cell = Instantiate(cellPrefab, cellPosition, Quaternion.identity);
                 cell.transform.SetParent(transform); 
-
-                cell.name = "Cell_" + row + "_" + col;
             }
         }
     }
