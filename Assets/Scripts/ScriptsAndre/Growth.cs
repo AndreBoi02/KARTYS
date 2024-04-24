@@ -11,9 +11,12 @@ public class Growth : MonoBehaviour
     [SerializeField] int m_testInt;
 
     public List<GameObject> m_bodyParts = new List<GameObject>();
-    
+
+    ObjectPooling objectPooling;
+
     void Start() {
         m_bodyParts.Add(m_head);
+        objectPooling = GameObject.Find("ObjectPooling").GetComponent<ObjectPooling>();
     }
 
     void Update() {
@@ -22,22 +25,45 @@ public class Growth : MonoBehaviour
         }
     }
 
-    public void GrowBody(int t_bodySize) {
-        if (t_bodySize == 1 && m_bodyParts.Count == 1) {
-            m_bodyParts.Add(m_tail);
-            placeBodyParts(m_tail);
-        }
-        else {
-            for (int i = 0; i < t_bodySize; i++) {
-                if (i == (t_bodySize - 1) && t_bodySize != 1) {
-                    m_bodyParts.Add(m_tail);
-                    placeBodyParts(m_tail);
-                }
-                else {
-                    m_bodyParts.Add(m_body);
-                    placeBodyParts(m_body);
-                }
+    public void GrowBody(int t_bodySize)
+    {
+        if (t_bodySize == 1)
+        {
+            if (m_bodyParts.Count == 1)
+            {
+                m_bodyParts.Add(m_tail);
+                placeBodyParts(m_tail);
             }
+            else
+            {
+                GameObject m_tempBodyPart = objectPooling.RequestObject();
+                m_bodyParts.Add(m_tempBodyPart);
+                placeBodyParts(m_tempBodyPart);
+            }
+        }
+        else
+        {
+            if (m_bodyParts.Count == 1)
+            {
+                for (int i = 0; i < t_bodySize; i++)
+                {
+                    if (i == (t_bodySize - 1))
+                    {
+                        m_bodyParts.Add(m_tail);
+                        placeBodyParts(m_tail);
+                    }
+                    else
+                    {
+                        GameObject m_tempBodyPart = objectPooling.RequestObject();
+                        m_bodyParts.Add(m_tempBodyPart);
+                        placeBodyParts(m_tempBodyPart);
+                    }
+                }
+            } else
+            {
+                //El mismo codigo de arriba pero tenemos que usar RemoveAt()
+            }
+            
         }
     }
 
