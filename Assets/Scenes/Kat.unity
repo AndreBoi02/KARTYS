@@ -466,6 +466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645477a9ce053504289c20f0538d4b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeTextValue: {fileID: 1797178579}
+  volumeSlider: {fileID: 1354324688}
+  confirmationPrompt: {fileID: 0}
   _newGameLevel: Level1
 --- !u!4 &238267059
 Transform:
@@ -2654,7 +2657,19 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 238267058}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1425210305
 GameObject:
   m_ObjectHideFlags: 0
