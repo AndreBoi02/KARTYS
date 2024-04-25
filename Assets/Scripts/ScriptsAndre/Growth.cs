@@ -109,7 +109,7 @@ public class Growth : MonoBehaviour
         m_bodyParts.RemoveAt(m_bodyParts.Count - 1);
     }
 
-    private void CutBody() {
+    public void CutBody() {
         if (m_bodyParts.Count == 2) {
             RemoveBodyPart();
             
