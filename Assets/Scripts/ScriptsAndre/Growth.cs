@@ -66,6 +66,7 @@ public class Growth : MonoBehaviour
                 //Sí
                 for (int i = 0; i < t_bodySize; i++) {
                     if (i == (t_bodySize - 1)) {
+                        m_tail.SetActive(true);
                         m_bodyParts.Add(m_tail);
                         PlaceBodyParts(m_tail);
                     } 
@@ -77,11 +78,22 @@ public class Growth : MonoBehaviour
                 }
             } 
             else {
-                //No
-
-                //El mismo codigo de arriba pero tenemos que usar RemoveAt()
+                // No
+                RemoveBodyPart();
+                t_bodySize ++;
+                for (int i = 0; i < t_bodySize; i++) {
+                    if (i == (t_bodySize - 1)) {
+                        m_tail.SetActive(true);
+                        m_bodyParts.Add(m_tail);
+                        PlaceBodyParts(m_tail); 
+                    }
+                    else {
+                        GameObject m_tempBodyPart = objectPooling.RequestObject();
+                        m_bodyParts.Add(m_tempBodyPart);
+                        PlaceBodyParts(m_tempBodyPart);
+                    }
+                }
             }
-            
         }
     }
 
