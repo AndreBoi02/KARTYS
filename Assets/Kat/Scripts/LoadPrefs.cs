@@ -17,7 +17,6 @@ public class LoadPrefs : MonoBehaviour
     [Header("Brightness Setting")]
     [SerializeField] private Slider brightnessSlider = null;
     [SerializeField] private TMP_Text brightnessTextValue = null;
-    [SerializeField] private float defaultBrightness = 1;
 
     [Header("Queality Level Setting")]
     [SerializeField] private TMP_Dropdown qualityDropdown;
@@ -72,6 +71,20 @@ public class LoadPrefs : MonoBehaviour
 
                 brightnessTextValue.text = localBrightness.ToString("0.0");
                 brightnessSlider.value = localBrightness;
+
+                Camera mainCamera = Camera.main;
+
+                UnityEngine.Rendering.PostProcessing.PostProcessVolume volume = mainCamera.GetComponent<UnityEngine.Rendering.PostProcessing.PostProcessVolume>();
+
+                if (volume != null)
+                {
+                    UnityEngine.Rendering.PostProcessing.ColorGrading colorGrading;
+                    if (volume.profile.TryGetSettings(out colorGrading))
+                    {
+                        // El valor de brillo puede variar dependiendo de tus necesidades
+                        colorGrading.postExposure.value = localBrightness;
+                    }
+                }
             }
         }
     }

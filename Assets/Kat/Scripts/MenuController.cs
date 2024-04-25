@@ -89,6 +89,21 @@ public class MenuController : MonoBehaviour
     {
         _brightnessLevel = brightness;
         brightnessTextValue.text = brightness.ToString("0.0");
+
+        Camera mainCamera = Camera.main;
+
+        // Asegúrate de tener un componente de Post-Processing en tu cámara
+        UnityEngine.Rendering.PostProcessing.PostProcessVolume volume = mainCamera.GetComponent<UnityEngine.Rendering.PostProcessing.PostProcessVolume>();
+
+        if (volume != null)
+        {
+            UnityEngine.Rendering.PostProcessing.ColorGrading colorGrading;
+            if (volume.profile.TryGetSettings(out colorGrading))
+            {
+                // El valor de brillo puede variar dependiendo de tus necesidades
+                colorGrading.postExposure.value = brightness;
+            }
+        }
     }
 
     public void SetFullScreen (bool isFullscreen)
