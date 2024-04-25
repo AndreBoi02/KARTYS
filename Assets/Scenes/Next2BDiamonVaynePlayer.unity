@@ -269,7 +269,7 @@ MonoBehaviour:
   m_body: {fileID: 2567884651263360498}
   m_tail: {fileID: 8369175043711531211}
   m_offSet: 1
-  m_testInt: 4
+  m_testInt: 1
   m_bodyParts: []
 --- !u!1 &2567884651263360498
 GameObject:
