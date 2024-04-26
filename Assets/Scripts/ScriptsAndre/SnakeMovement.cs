@@ -9,7 +9,7 @@ public class SnakeMovement : MonoBehaviour
     private Vector2Int m_gridPos;
     private float m_gridMoveTimer;
     private float m_gridMoveTimerMax;
-    [SerializeField] private float m_snakeBodySize;
+    public float m_snakeBodySize;
     private List<Vector2Int> snakeMovePositionList = new List<Vector2Int>();
 
     private ObjectPooling m_objectPooling;
@@ -25,7 +25,7 @@ public class SnakeMovement : MonoBehaviour
 
         m_objectPooling = GameObject.Find("ObjectPoolingP1").GetComponent<ObjectPooling>();
 
-        m_snakeBodySize = 1;
+        m_snakeBodySize = 2;
     }
 
     private void Update() {
