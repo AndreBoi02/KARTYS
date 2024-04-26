@@ -49,7 +49,7 @@ public class Counter : MonoBehaviour
         P2ScoreTxt.text = PlayerScoreTxt.text = "0";
     }
 
-    //ESTO VA EN EL SCRIPT DE LA COMIDA
+    /*ESTO VA EN EL SCRIPT DE LA COMIDA
     public Counter CounterInstance;
     public Growth GrowthInstance;
 
@@ -69,4 +69,4 @@ public class Counter : MonoBehaviour
             }
         }
     }
-}
+}*/
