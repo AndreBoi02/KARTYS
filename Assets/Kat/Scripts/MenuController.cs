@@ -68,7 +68,7 @@ public class MenuController : MonoBehaviour
 
 
     public void NewGameDialogYes() {
-        SceneManager.LoadScene(_newGameLevel);
+        SceneManager.LoadScene("DC");
     }
 
     public void ExitGame() {
