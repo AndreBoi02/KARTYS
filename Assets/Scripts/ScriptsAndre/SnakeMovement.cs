@@ -25,7 +25,7 @@ public class SnakeMovement : MonoBehaviour
 
         m_objectPooling = GameObject.Find("ObjectPoolingP1").GetComponent<ObjectPooling>();
 
-        m_snakeBodySize = 2;
+        m_snakeBodySize = 1;
     }
 
     private void Update() {
