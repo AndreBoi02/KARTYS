@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 632171093}
   - component: {fileID: 632171095}
   - component: {fileID: 632171094}
+  - component: {fileID: 632171096}
   m_Layer: 5
   m_Name: Contador2
   m_TagString: Untagged
@@ -613,6 +614,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632171092}
   m_CullTransparentMesh: 1
+--- !u!114 &632171096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632171092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf2a060ec13a91489a3cfcff51d1c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &668481216
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +637,7 @@ GameObject:
   - component: {fileID: 668481217}
   - component: {fileID: 668481219}
   - component: {fileID: 668481218}
+  - component: {fileID: 668481220}
   m_Layer: 5
   m_Name: Contador1
   m_TagString: Untagged
@@ -748,6 +762,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668481216}
   m_CullTransparentMesh: 1
+--- !u!114 &668481220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668481216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6b1e6ddd1c13c4eaa3bf66f074228b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &814575848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e4deb246b3b5c48a82463f432a54d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5843496860757532077, guid: 399ec1724ea8c914bb5e0a169f3b1549, type: 3}
+  prefab: {fileID: 4349970384316709604, guid: 8b2690c59edc8b546a48e4357fcc1e4b, type: 3}
   poolSize: 50
 --- !u!1 &5369991806026233433
 GameObject:
@@ -2215,7 +2241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e4deb246b3b5c48a82463f432a54d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5843496860757532077, guid: 8f1178ccc5d0a154ebfb26a941951d16, type: 3}
+  prefab: {fileID: 5823843774096707888, guid: 3a6577105b749c1428faec460a07f199, type: 3}
   poolSize: 50
 --- !u!4 &5369991806194850957
 Transform:
