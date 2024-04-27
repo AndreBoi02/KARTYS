@@ -6,14 +6,20 @@ public class ObjectsGen : MonoBehaviour
 {
     //script based on unity learn tutorial project 2 Junior Programmer
     public GameObject[] obstaclesPrefabs;
-    private float xRangeGen = 20f;
-    private float yRangeGen = 20f;
+    public float xRangeGen = 1f;
+    public float yRangeGen = 1f;
     public float minSpawnInterval = 1f;
     public float maxSpawnInterval = 3f;
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, new Vector3(xRangeGen * 2, yRangeGen * 2, 0));
+    }
 
-    // Start is called before the first frame update
-    void Start()
+
+        // Start is called before the first frame update
+        void Start()
     {
         StartCoroutine(SpawnObstacles()); //funcion con tiempo en lugar de tecla
     }
@@ -36,9 +42,9 @@ public class ObjectsGen : MonoBehaviour
             float spawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
             yield return new WaitForSeconds(spawnInterval);
             int index = Random.Range(0, obstaclesPrefabs.Length); //agregar mas obstaculos en el index de los prefabs
-            Vector3 spawnPosition = new Vector3(Random.Range(-xRangeGen, xRangeGen), 0, Random.Range(-yRangeGen, yRangeGen));
+            Vector3 spawnPosition = new Vector3(Random.Range(-xRangeGen, xRangeGen), Random.Range(-yRangeGen, yRangeGen), 0);
             GameObject obstacles = Instantiate(obstaclesPrefabs[index], spawnPosition, Quaternion.identity);
-            Destroy(obstacles, 2f);
+            //Destroy(obstacles, 2f);
         }
     }
 }

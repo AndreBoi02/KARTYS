@@ -9,8 +9,9 @@ public class Comida : MonoBehaviour
     //Growth crecer;
 
     [SerializeField] private int numeroDelValorDeLaComida;
-    [SerializeField] private ScoreP1 scoreP1;
-    [SerializeField] private ScoreP2 scoreP2;
+    
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,14 +28,8 @@ public class Comida : MonoBehaviour
             //collision.GetComponent<Growth>().GrowBody(numeroDelValorDeLaComida);
         }
 
-        if (collision.CompareTag("Player"))
-        {
-            scoreP1.Increase(numeroDelValorDeLaComida);
-        }
-
-        if (collision.CompareTag("Player2"))
-        {
-            scoreP2.Increase(numeroDelValorDeLaComida);
-        }
+        
     }
+
+    
 }
